@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title></title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <script src='//api.tiles.mapbox.com/mapbox.js/v1.5.2/mapbox.js'></script>
+  <script src="./leaflet-hash.js"></script>
+  <script src="./lanes.js"></script>
+  <script src="./bars.js"></script>
+  <script src="./coffee.js"></script>
+  <link href='//api.tiles.mapbox.com/mapbox.js/v1.5.2/mapbox.css' rel='stylesheet' />
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style>
+    body { margin:0; padding:0; }
+
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+
+    #geolocate {
+        background: #fff;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 30px;
+        height: 30fpx;
+        z-index: 1000;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 20px;
+        color: #3C4E5A;
+        display: block;
+        border: 1px solid #BBB;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    #geolocate:hover {
+        background: #f1edda;
+    }
+
+    .legend-title{
+      text-align: center;
+      margin: 0 0 5px;
+      border-bottom: 1px solid #aaa;
+    }
+
+    .legend-content {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div id="legend">
+    <h1 class="legend-title">DC Beers, Bikes and Brews</h1>
+    <div class="legend-content">Free WiFi spots in DC. Coffee Shops include WiFi passwords; bars have either free access or you'll need to ask the bartender.</div>
+  </div>
+  <a href='#' id='geolocate'><i class="fa fa-location-arrow"></i></a>
+  <script type="text/javascript">
+  var map = L.mapbox.map('map', 'geraldrich.h0h7ik7b', {
+    zoomControl: false
+  });
+  L.mapbox.tileLayer('geraldrich.h0h7ik7b', {
+    detectRetina: true
+  }).addTo(map);
+
+  map.legendControl.addLegend(document.getElementById('legend').innerHTML);
+
+  var hash = new L.Hash(map);
+
+  var geolocate = document.getElementById('geolocate');
+
+  // This uses the HTML5 geolocation API, which is available on
+  // most mobile browsers and modern browsers, but not in Internet Explorer
+  //
+  // See this chart of compatibility for details:
+  // http://caniuse.com/#feat=geolocation
+  if (!navigator.geolocation) {
+      geolocate.innerHTML = 'geolocation is not available';
+  } else {
+      geolocate.onclick = function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          map.locate();
+      };
+  }
+
+  // Once we've got a position, zoom and center the map
+  // on it, and add a single marker.
+  map.on('locationfound', function(e) {
+      map.fitBounds(e.bounds);
+
+      L.geoJson({
+          type: "Feature",
+          geometry: {
+              type: "Point",
+              coordinates: [e.latlng.lng, e.latlng.lat]
+          },
+          properties: {
+              'marker-color': '#333',
+              'marker-symbol': 'star'
+          }
+      }, {
+        pointToLayer: L.mapbox.marker.style,
+        style: function(feature) { return feature.properties; }
+      }).addTo(map);
+
+  });
+
+  // If the user chooses not to allow their location
+  // to be shared, display an error message.
+  map.on('locationerror', function() {
+      geolocate.innerHTML = 'position could not be found';
+  });
+
+  var laneStyle = {
+      "color": "#900",
+      "weight": 2,
+      "opacity": 0.55
+  };
+
+  var cafeStyle = {
+      "marker-color": "#5D3C06",
+      "marker-symbol": "cafe"
+  };
+
+  L.geoJson(lanes, {
+    style: laneStyle
+  }).addTo(map);
+
+  L.geoJson(cafes, {
+    pointToLayer: L.mapbox.marker.style,
+    style: function(feature) { return feature.properties; }
+  }).addTo(map);
+
+  L.geoJson(bars, {
+    pointToLayer: L.mapbox.marker.style,
+    style: function(feature) { return feature.properties; }
+  }).addTo(map);
+
+  </script>
+</body>
+</html>

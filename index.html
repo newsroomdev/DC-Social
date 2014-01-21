@@ -75,6 +75,21 @@
 
   var hash = new L.Hash(map);
 
+  function makePopup(feature, layer) {
+      // does this feature have a property named popupContent?
+      if (!feature.properties.description) {
+        layer.bindPopup('<b>' + feature.properties.title + '<\/b>', {
+          closeButton: false
+        });
+      } else {
+        layer.bindPopup('<b>' + feature.properties.title + '<\/b><div class="description">' + feature.properties.description + '<\/div>', {
+          closeButton: false
+        });
+      }
+  }
+
+  function styleMarker(feature) { return feature.properties; }
+
   var geolocate = document.getElementById('geolocate');
 
   // This uses the HTML5 geolocation API, which is available on
@@ -126,23 +141,20 @@
       "opacity": 0.55
   };
 
-  var cafeStyle = {
-      "marker-color": "#5D3C06",
-      "marker-symbol": "cafe"
-  };
-
   L.geoJson(lanes, {
     style: laneStyle
   }).addTo(map);
 
   L.geoJson(cafes, {
     pointToLayer: L.mapbox.marker.style,
-    style: function(feature) { return feature.properties; }
+    style: styleMarker,
+    onEachFeature: makePopup
   }).addTo(map);
 
   L.geoJson(bars, {
     pointToLayer: L.mapbox.marker.style,
-    style: function(feature) { return feature.properties; }
+    style: styleMarker,
+    onEachFeature: makePopup
   }).addTo(map);
 
   </script>

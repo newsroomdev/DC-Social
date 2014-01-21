@@ -4,8 +4,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "The Coffee Bar",
-        "login": "drinkmorecoffee",
+        "title": "The Coffee Bar",
+        "description": "drinkmorecoffee",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },
@@ -20,8 +20,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "Bistro Bohem",
-        "login": "2027355895",
+        "title": "Bistro Bohem",
+        "description": "2027355895",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },
@@ -36,8 +36,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "Black Cat",
-        "login": "luckycat",
+        "title": "Black Cat",
+        "description": "luckycat",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },
@@ -52,8 +52,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "Snap",
-        "login": "nutella1",
+        "title": "Snap",
+        "description": "nutella1",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },
@@ -68,8 +68,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "Columbia Heights Coffee",
-        "login": "FAIRTRADE1",
+        "title": "Columbia Heights Coffee",
+        "description": "FAIRTRADE1",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },
@@ -84,8 +84,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "Azi's Cafe",
-        "login": "sunny",
+        "title": "Azi's Cafe",
+        "description": "sunny",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },
@@ -100,8 +100,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "Blind Dog Cafe",
-        "login": "baxtercantsee",
+        "title": "Blind Dog Cafe",
+        "description": "baxtercantsee",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },
@@ -116,8 +116,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "Le Caprice",
-        "login": "baguette",
+        "title": "Le Caprice",
+        "description": "baguette",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },
@@ -132,8 +132,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "Filter",
-        "login": "",
+        "title": "Filter",
+        "description": "",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },
@@ -148,8 +148,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "Peregrine",
-        "login": "espresso",
+        "title": "Peregrine",
+        "description": "espresso",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },
@@ -164,8 +164,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "Tryst",
-        "login": "coupetnt",
+        "title": "Tryst",
+        "description": "coupetnt",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },
@@ -180,8 +180,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "The Coupe",
-        "login": "voteforus",
+        "title": "The Coupe",
+        "description": "voteforus",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },
@@ -196,8 +196,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "Big Bear Cafe",
-        "login": "",
+        "title": "Big Bear Cafe",
+        "description": "",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },
@@ -212,8 +212,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "Sidamo",
-        "login": "",
+        "title": "Sidamo",
+        "description": "",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },
@@ -228,8 +228,8 @@ var cafes = {
     {
       "type": "Feature",
       "properties": {
-        "place": "Chinatown Coffee",
-        "login": "",
+        "title": "Chinatown Coffee",
+        "description": "",
         "marker-color": "#5D3C06",
         "marker-symbol": "cafe"
       },

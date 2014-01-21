@@ -13,7 +13,7 @@ var bars = {
       "properties": {
         "marker-symbol": "beer",
         "marker-color": "#EC9811",
-        "name": "The Exchange",
+        "title": "The Exchange",
         "address": "1719 G St NW"
       }
     },
@@ -29,7 +29,7 @@ var bars = {
       "properties": {
         "marker-symbol": "beer",
         "marker-color": "#EC9811",
-        "name": "Blackfin",
+        "title": "Blackfin",
         "address": "1620 I St NW"
       }
     },
@@ -45,7 +45,7 @@ var bars = {
       "properties": {
         "marker-symbol": "beer",
         "marker-color": "#EC9811",
-        "name": "Churchkey",
+        "title": "Churchkey",
         "address": "1337 14th St NW",
         "note": "Ask the bartender for the password"
       }
@@ -62,7 +62,7 @@ var bars = {
       "properties": {
         "marker-symbol": "beer",
         "marker-color": "#EC9811",
-        "name": "Busboys and Poets",
+        "title": "Busboys and Poets",
         "address": "1025 5th St NW"
       }
     },
@@ -78,7 +78,7 @@ var bars = {
       "properties": {
         "marker-symbol": "beer",
         "marker-color": "#EC9811",
-        "name": "SoHo Cafe",
+        "title": "SoHo Cafe",
         "address": "2150 P St NW"
       }
     },
@@ -94,7 +94,7 @@ var bars = {
       "properties": {
         "marker-symbol": "beer",
         "marker-color": "#EC9811",
-        "name": "Chinatown Coffee Company",
+        "title": "Chinatown Coffee Company",
         "address": "475 H St NW"
       }
     },
@@ -110,7 +110,7 @@ var bars = {
       "properties": {
         "marker-symbol": "beer",
         "marker-color": "#EC9811",
-        "name": "Science Club",
+        "title": "Science Club",
         "address": "1136 19th St NW"
       }
     },
@@ -126,7 +126,7 @@ var bars = {
       "properties": {
         "marker-symbol": "beer",
         "marker-color": "#EC9811",
-        "name": "Wonderland Ballroom",
+        "title": "Wonderland Ballroom",
         "address": "  1101 Kenyon St NW"
       }
     },
@@ -142,7 +142,7 @@ var bars = {
       "properties": {
         "marker-symbol": "beer",
         "marker-color": "#EC9811",
-        "name": "Tryst",
+        "title": "Tryst",
         "address": "2459 18th St NW"
       }
     },
@@ -158,7 +158,7 @@ var bars = {
       "properties": {
         "marker-symbol": "beer",
         "marker-color": "#EC9811",
-        "name": "Northside Social",
+        "title": "Northside Social",
         "address": "3211 Wilson Blvd, Arlington, VA 22201"
       }
     },
@@ -174,7 +174,7 @@ var bars = {
       "properties": {
         "marker-symbol": "beer",
         "marker-color": "#EC9811",
-        "name": "Boundary Stone",
+        "title": "Boundary Stone",
         "address": "116 Rhode Island Ave NW"
       }
     },
@@ -183,7 +183,7 @@ var bars = {
       "properties": {
         "marker-symbol": "beer",
         "marker-color": "#EC9811",
-        "name": "Bistro Bohem",
+        "title": "Bistro Bohem",
         "address": "600 Florida Ave Nw"
       },
       "geometry": {
